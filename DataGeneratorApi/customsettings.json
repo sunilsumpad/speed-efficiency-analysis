@@ -1,0 +1,5 @@
+{
+  "CustomSettings": {
+    "SpeedVsEfficiencyWebApiBaseUrl": "http://localhost:5178"
+  }
+}

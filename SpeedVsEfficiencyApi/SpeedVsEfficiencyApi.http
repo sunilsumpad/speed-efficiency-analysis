@@ -1,0 +1,6 @@
+@SpeedVsEfficiencyApi_HostAddress = http://localhost:5178
+
+GET {{SpeedVsEfficiencyApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
