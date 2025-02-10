@@ -3,7 +3,7 @@ using DataGeneratorApi.Models;
 namespace DataGeneratorApi.BikeSpeedDataHelpers {
     public class BikeSpeedDataHelper {
 
-        public List<BikeSpeedDataItemDTO> GenerateBikeSpeedData() {
+        public static List<BikeSpeedDataItemDTO> GenerateBikeSpeedData() {
             List<BikeSpeedDataItemDTO> bikeSpeedDataItemList = [];
             for(int i=0; i<10; i++) {
                 int randomSpeed = RandomSpeedGenerator();

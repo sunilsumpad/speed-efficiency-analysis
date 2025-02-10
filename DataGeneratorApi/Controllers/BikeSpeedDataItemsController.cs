@@ -24,7 +24,7 @@ namespace DataGeneratorApi.Controllers
         [HttpPost]
         public async Task<ActionResult<BikeSpeedDataItem>> PostBikeSpeedDataItem(BikeSpeedDataItem bikeSpeedDataItem)
         {
-            List<BikeSpeedDataItemDTO> bikeSpeedDataItemList = new BikeSpeedDataHelper().GenerateBikeSpeedData();
+            List<BikeSpeedDataItemDTO> bikeSpeedDataItemList = BikeSpeedDataHelper.GenerateBikeSpeedData();
             await PushDataToBackend(bikeSpeedDataItemList);
 
             return Content(JsonSerializer.Serialize(bikeSpeedDataItemList), "application/json");
