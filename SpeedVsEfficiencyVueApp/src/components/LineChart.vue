@@ -94,11 +94,9 @@ export default {
       let labels = [];
       let speedValues = [];
       let mileageValues = [];
-      for (let i = 0; i < data.length; i++) {
-        labels.push(moment(String(data[i].dateTime)).format('DD/MM hh:mm A'));
-        speedValues.push(data[i].speed);
-        mileageValues.push(data[i].mileage);
-      }
+      labels = data.map((singledata) => singledata.dateTime);
+      speedValues = data.map((singledata) => singledata.speed);
+      mileageValues = data.map((singledata) => singledata.mileage);
       return { labels: labels, speedValues: speedValues, mileageValues: mileageValues };
     },
     createSpeedDataset(data) {
