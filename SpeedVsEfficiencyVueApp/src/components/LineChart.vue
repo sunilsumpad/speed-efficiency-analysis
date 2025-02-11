@@ -51,6 +51,7 @@ import { Line } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, PointElement, LinearScale, CategoryScale } from 'chart.js';
 import "@/assets/line_chart.css";
 import moment from 'moment';
+import apiClient from "@/api"; // Import the Axios instance
 
 ChartJS.register(Title, Tooltip, Legend, LineElement, PointElement, LinearScale, CategoryScale);
 
@@ -76,8 +77,8 @@ export default {
     },
     async getDataApiCall() {
       try {
-        const response = await fetch('http://localhost:5178/api/BikeSpeedDataItems'); // Replace with your API URL
-        const result = await response.json();
+        const response = await apiClient.get('/BikeSpeedDataItems'); // Replace with your API URL
+        const result = await response.data;
         let data = this.createLineChartData(result);
         /// Replace the entire object to ensure reactivity
         this.chartData = {
